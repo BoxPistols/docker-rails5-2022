@@ -13,6 +13,7 @@ services:
     stdin_open: true
   db:
     image: mysql:5.7
+    platform: linux/x86_64 # Mac M1対応
     volumes:
       - db-volume:/var/lib/mysql
     environment:
