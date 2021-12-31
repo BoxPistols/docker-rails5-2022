@@ -59,7 +59,7 @@ services:
     volumes:
       - .:/app # LocalとDockerの共有パス/接点
     ports:
-      - 3000:3000 # く公開するポート番号>:くコンテナ内部の転送先ポート番号〉
+      - 3333:3000 # く公開するポート番号>:くコンテナ内部の転送先ポート番号〉  => http://localhost:3333/
     depends_on:
       - db # 起動時にMySQLサーバーが先に起動する
     tty: true # debug用
@@ -109,3 +109,68 @@ docker-compose build
 * 対応<- 実際はやっていなく、 docker-compose buildを再実行
 
   + `docker-compose run web bundle update`
+
+## DB設定
+
+### database.ymlの設定
+
+* パスワード
+* ホスト
+
+```yml
+  password: password
+  host: localhost
+```
+
+### コマンド
+
+現在のディレクトリにある、docker-compose.ymlに基づいて、コンテナーを起動するコマンド:
+
+```
+docker-compose up -d
+```
+
+確認：
+
+```
+docker-compose ps
+```
+
+bundle exec rake
+* Rails環境にインストールされているrakeコマンドを実行
+* rake db:create = Railsで使用するデータベースをMYSQLサーバ上に作成してくれます
+* bundle exec以降が実行コマンド
+* rake db:create=まだデーターがない時にDBを作成するコマンド
+
+```
+docker-compose run web bundle exec rake db:create
+```
+
+## Docker
+
+* 起動
+  + docker-compose up -d
+* Stop
+  + docker-compose stop
+* 削除（再度立ち上げれば戻るので大丈夫）
+  + docker-compose down
+
+### 注意点
+
+* 起動`-d`無しだと起動ログの監視から外れ、再起動時にpidエラーが出るかも
+  + docker-compose up
+* 対応
+  + `rm tmp/pids/server.pid`
+
+## ブラウザ胃確認：
+
+* http://localhost:3333/
+* 他とかぶらないた対策で3333にしている
+
+## 起動時にシェルでserver.pidを消す設定
+
+docker-compose.yml
+
+```
+command: bash -c "rm -f tmp/pids/server.pid; bundle exec rails s -p 3000 -b '0.0.0.0'"
+```
