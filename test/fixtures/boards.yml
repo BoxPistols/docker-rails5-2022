@@ -2,14 +2,10 @@
 
 one:
   name: MyString
-  string: MyString
   title: MyString
-  body: MyString
-  text: MyString
+  body: MyText
 
 two:
   name: MyString
-  string: MyString
   title: MyString
-  body: MyString
-  text: MyString
+  body: MyText
