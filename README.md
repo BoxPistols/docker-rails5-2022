@@ -162,7 +162,7 @@ docker-compose run web bundle exec rake db:create
 * 対応
   + `rm tmp/pids/server.pid`
 
-## ブラウザ胃確認：
+## ブラウザ確認：
 
 * http://localhost:3333/
 * 他とかぶらないた対策で3333にしている
@@ -177,8 +177,42 @@ command: bash -c "rm -f tmp/pids/server.pid; bundle exec rails s -p 3000 -b '0.0
 
 ---
 
-# 掲示板を作成
-* コントローラー
-* アクション
-* ルーティング
-* HTML
+## 掲示板を作成する
+* 必要な作成ファイル
+  + コントローラー
+  + アクション
+  + ルーティング
+  + HTML
+
+### コントローラーとアクション
+
+app/controllers/boards_controller.rb
+
+```rb
+class BoardsController < ApplicationController
+  def index
+  end
+end
+```
+
+### ルーティング
+
+config/routes.rb
+
+```rb
+Rails.application.routes.draw do
+  # get 'boards', to: 'boards#index'
+  root 'boards#index'
+end
+```
+
+### HTML
+
+app/views/boards/index.html.erb
+
+```html
+<h1>掲示板</h1>
+<p>lorem ipsum dolor sit amet, consectetur adip</p>
+```
+
+---
