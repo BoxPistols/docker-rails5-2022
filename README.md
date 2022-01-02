@@ -174,3 +174,11 @@ docker-compose.yml
 ```
 command: bash -c "rm -f tmp/pids/server.pid; bundle exec rails s -p 3000 -b '0.0.0.0'"
 ```
+
+---
+
+# 掲示板を作成
+* コントローラー
+* アクション
+* ルーティング
+* HTML
