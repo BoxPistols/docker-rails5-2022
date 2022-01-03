@@ -13,7 +13,6 @@ class BoardsController < ApplicationController
 
   def create
     Board.create(board_params)
-    # redirect_to, board_path
   end
 
   private
