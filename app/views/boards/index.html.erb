@@ -20,8 +20,8 @@
       <th><%= board.id %></th>
       <td><%= board.title %></td>
       <td><%= board.name %></td>
-      <td><%= board.created_at.strftime("%Y年 %m月 %d日 %H時 %M分") %></td>
-      <td><%= board.updated_at.strftime("%Y年 %m月 %d日 %H時 %M分") %></td>
+      <td><%= board.created_at.to_s(:datetime_jp) %></td>
+      <td><%= board.updated_at.to_s(:datetime_jp) %></td>
     </tr>
     <% end %>
   </tbody>
