@@ -15,20 +15,15 @@
     </tr>
   </thead>
   <tbody>
+    <% @board.each do |board| %>
     <tr>
-      <th>1</th>
-      <td>雑談掲示板</td>
-      <td>Taro</td>
-      <td>2018年4月1日</td>
-      <td>2018年4月15日</td>
+      <th><%= board.id %></th>
+      <td><%= board.title %></td>
+      <td><%= board.name %></td>
+      <td><%= board.created_at.strftime("%Y年 %m月 %d日 %H時 %M分") %></td>
+      <td><%= board.updated_at.strftime("%Y年 %m月 %d日 %H時 %M分") %></td>
     </tr>
-    <tr>
-      <th>2</th>
-      <td>雑談掲示板2</td>
-      <td>Ken</td>
-      <td>2018年4月1日</td>
-      <td>2018年4月15日</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>
 
