@@ -7,12 +7,24 @@ class BoardsController < ApplicationController
     @board = Board.new
   end
 
+  def create
+    Board.create(board_params)
+    redirect_to board_path
+  end
+
   def show
     @board = Board.find(params[:id])
   end
 
-  def create
-    Board.create(board_params)
+  def edit
+    @board = Board.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:id])
+    board.update(board_params)
+
+    redirect_to board_path(board)
   end
 
   private
