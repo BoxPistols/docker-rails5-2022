@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # post 'boards', to: 'boards#create'
   # get 'boards/:id', to: 'boards#show'
   #=== All in One
-  # resources :boards
+  resources :boards
   #=== Filter
-  resources :boards, only: [:index, :new, :create, :show]
+  # resources :boards, only: [:index, :new, :create, :show]
 end
