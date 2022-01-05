@@ -12,7 +12,7 @@
       <th>作成者</th>
       <th>作成日時</th>
       <th>更新日時</th>
-      <th>Link</th>
+      <th colspan="2" class="px-3">操作</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +25,7 @@
       <td><%= board.updated_at.to_s(:datetime_jp) %></td>
       <%# 詳細リンク board = オブジェクトへのリンク = idへの自動リンク %>
       <td><%= link_to "詳細", board, class:"btn btn-outline-dark" %></td>
+      <td><%= link_to "削除", board, class:"btn btn-outline-dark", method: :delete %></td>
     </tr>
     <% end %>
   </tbody>
