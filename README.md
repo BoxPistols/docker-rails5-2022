@@ -79,8 +79,11 @@ volumes:
 
 ## Rails環境作成
 
+- Dockerアプリ起動
+
 ```ruby
-docker-compose run web rails new . --force --database=mysql
+# docker-compose run web rails new . --force --database=mysql
+docker-compose run web rails new . --force --database=mysql --skip-bundle
 
 =begin
 - rails new.でコマンド実行時のディレクトリ上に、新しいRaisプロジェクトのファイルを作成します
