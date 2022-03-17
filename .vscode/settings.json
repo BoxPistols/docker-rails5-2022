@@ -24,5 +24,10 @@
         ]
     },
     "files.trimFinalNewlines": true,
-    "html.format.endWithNewline": true
+    "html.format.endWithNewline": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#3E2913",
+        "titleBar.activeBackground": "#573A1B",
+        "titleBar.activeForeground": "#FDFAF8"
+    }
 }
