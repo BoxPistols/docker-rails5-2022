@@ -4,36 +4,3 @@
     <%= link_to "新規作成", new_board_path, class:"btn btn-outline-dark" %>
   </div>
 </div>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th>ID</th>
-      <th>タイトル</th>
-      <th>作成者</th>
-      <th>作成日時</th>
-      <th>更新日時</th>
-      <th colspan="2" class="px-3">操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @board.each do |board| %>
-    <tr>
-      <td><%= board.id %></td>
-      <td><%= board.title %></td>
-      <td><%= board.name %></td>
-      <td><%= board.created_at.to_s(:datetime_jp) %></td>
-      <td><%= board.updated_at.to_s(:datetime_jp) %></td>
-      <%# 詳細リンク board = オブジェクトへのリンク = idへの自動リンク %>
-      <td><%= link_to "詳細", board, class:"btn btn-outline-dark" %></td>
-      <td><%= link_to "削除", board, class:"btn btn-outline-dark", method: :delete %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%# <h1>Ajax#index</h1>
-<p id="hoge">赤色になるよ</p>
-
-<script>
-$("#hoge").css("color","red")
-</script> %>
