@@ -2,7 +2,9 @@ version: '3'
 services:
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    # 起動時にシェルでserver.pidを消す
+    command: bash -c "rm -f tmp/pids/server.pid; bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
     ports:
@@ -13,9 +15,10 @@ services:
     stdin_open: true
   db:
     image: mysql:5.7
+    platform: linux/x86_64 # Mac M1対応
     volumes:
       - db-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
 volumes:
-  db-volume:
+  db-volume: null

@@ -1,7 +1,33 @@
 {
-  "workbench.colorCustomizations": {
-    "activityBar.background": "#3E2913",
-    "titleBar.activeBackground": "#573A1B",
-    "titleBar.activeForeground": "#FDFAF8"
-  }
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautifyrc"
+            ]
+        },
+        "css": [
+            "css",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html",
+            "erb"
+        ]
+    },
+    "files.trimFinalNewlines": true,
+    "html.format.endWithNewline": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#3E2913",
+        "titleBar.activeBackground": "#573A1B",
+        "titleBar.activeForeground": "#FDFAF8"
+    }
 }
