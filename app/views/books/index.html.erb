@@ -1,14 +1,1 @@
 <h2>Books index</h2>
-
-<%= form_with model:@book, url:@book, local:true do |f| %>
-
-<h4>タイトル</h4>
-<%= f.text_field:title %>
-
-<h4>本文</h4>
-<%= f.text_area:body %>
-<div>
-    <%= f.submit "投稿" %>
-</div>
-
-<% end %>

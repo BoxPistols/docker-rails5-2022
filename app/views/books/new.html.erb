@@ -1,0 +1,14 @@
+<h2>Books new</h2>
+
+<%= form_with model:@book, url:'/books', local:true do |f| %>
+
+<h4>タイトル</h4>
+<%= f.text_field:title %>
+
+<h4>本文</h4>
+<%= f.text_area:body %>
+<div>
+	<%= f.submit "投稿" %>
+</div>
+
+<% end %>
