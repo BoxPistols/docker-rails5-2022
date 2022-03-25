@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_25_083650) do
+ActiveRecord::Schema.define(version: 2022_03_25_083835) do
 
   create_table "boards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2022_03_25_083650) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "body"
   end
 
 end
