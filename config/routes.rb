@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'books/new'
 
+  post 'books/create'
+
   get 'books/show'
   get 'books/edit'
 
