@@ -1,3 +1,12 @@
 <h1>Topですね</h1>
 
-<p>あああ</p>
+<h2>Book List</h2>
+<% @books.each do |book| %>
+
+<p>内容</p>
+<ul>
+  <li><%= book.title %></li>
+  <li><%= book.body %></li>
+</ul>
+
+<% end %>

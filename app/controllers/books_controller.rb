@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   end
 
   def top
+    @books = Book.all
   end
 
   def new
