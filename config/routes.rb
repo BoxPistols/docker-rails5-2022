@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   post 'books' => 'books#create'
 
   # 詳細画面
-  get 'books/show'
+  get 'books/:id' => 'books#show', as: "book"
+
   # 編集画面
   get 'books/edit'
 
