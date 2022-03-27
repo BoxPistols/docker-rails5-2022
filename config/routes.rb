@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   # 編集画面
   get 'books/:id/edit' => 'books#edit', as: "edit_book"
+  patch 'books/:id' => 'books#update', as: 'update_book'
 
 end

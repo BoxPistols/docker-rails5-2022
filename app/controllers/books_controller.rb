@@ -24,9 +24,14 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
   end
-
+  # 編集したら保存
   def update
-
+    # 変数bookにモデルから探しだしたid/レコードを当てる
+    book = Book.find(params[:id])
+    # updateメソッド(ストロングパラメーター)
+    book.update(book_params)
+    # Createと同じ
+    redirect_to book_path(book.id)
   end
 
   private
