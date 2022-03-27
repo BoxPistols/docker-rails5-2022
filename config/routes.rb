@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'books/:id' => 'books#show', as: "book"
 
   # 編集画面
-  get 'books/edit'
+  get 'books/:id/edit' => 'books#edit', as: "edit_book"
 
 end
