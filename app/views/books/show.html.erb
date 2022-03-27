@@ -1,12 +1,15 @@
 <h2>詳細ページ</h2>
-
 <h3>Book 詳細</h3>
-
 <p>内容</p>
 <ul>
-  <li>タイトル: <%= @book.title %></li>
-  <li>本文: <%= @book.body %></li>
+  <li>タイトル:
+	<%= @book.title %></li>
+  <li>本文:
+	<%= @book.body %></li>
+  <li>画像:
+	<%= attachment_image_tag @book, :image, :fill, 300, 300, format: 'jpeg' %>
+	<!-- , :image, format: 'jpeg', size: "300x300" -->
+</li>
 </ul>
-
 <%= link_to "編集", edit_book_path(@book.id) %>
 <%= link_to "本コンテンツ", "/top" %>
