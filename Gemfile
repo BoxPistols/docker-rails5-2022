@@ -42,6 +42,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.6.1'
 gem 'jquery-rails'
 gem 'mini_racer'
+gem 'devise'
 
 #=== Post image ===
 # 画像投稿用gem
