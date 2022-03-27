@@ -1,9 +1,11 @@
 <div class="wrap">
   <% @books.each do |book| %>
     <div class="cont">
-      <div><%= attachment_image_tag book, :image, :fill, 100, 100, format: 'jpeg' %></div>
+      <div><%= attachment_image_tag book, :image, :fill, 100, 100, format: 'jpeg' %></div>      
       <div class="list-title"><%= link_to book.title, book_path(book.id) %></div>
       <div class="list-body"><%= book.body %></div>
+      <p>ユーザーネーム：<%= book.user.name %></p>
+
     </div>
   <% end %>
   <div>
