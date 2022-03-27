@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # TOP画面
   get 'top' => 'books#top'
+  get 'books' => 'books#top'
 
   # POST画面
   get 'new' => 'books#new'
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
   # 編集画面
   get 'books/:id/edit' => 'books#edit', as: "edit_book"
   patch 'books/:id' => 'books#update', as: 'update_book'
-
+  # 削除
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 end
