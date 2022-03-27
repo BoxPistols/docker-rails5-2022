@@ -1,4 +1,15 @@
 <h2>Books new</h2>
+
+<!-- バリデート結果 -->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model:@book, url:'/books', local:true do |f| %>
   <h4>タイトル</h4>
   <%= f.text_field:title %>
