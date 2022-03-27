@@ -1,21 +1,15 @@
-<h2>Topですね</h2>
-<h3>Book List</h3>
-<% @books.each do |book| %>
-  <p>内容</p>
-  <ul>
-    <li>タイトル:
-      <%= book.title %></li>
-    <li>本文:
-      <%= book.body %></li>
-    <li>詳細:
-      <%= link_to book.title, book_path(book.id) %></li>
-    <li>画像:
-      <%= attachment_image_tag book, :image, :fill, 100, 100, format: 'jpeg' %></li>
-  </ul>
-<% end %>
-<p>
-  <%= link_to "ルートTOP", "/" %>
-</p>
-<p>
-  <%= link_to "新規作成", "/new" %>
-</p>
+<div class="wrap">
+  <% @books.each do |book| %>
+    <div class="cont">
+      <div><%= attachment_image_tag book, :image, :fill, 100, 100, format: 'jpeg' %></div>
+      <div class="list-title"><%= link_to book.title, book_path(book.id) %></div>
+      <div class="list-body"><%= book.body %></div>
+    </div>
+  <% end %>
+  <div>
+    <%= link_to "ルートTOP", "/" %>
+  </div>
+  <div>
+    <%= link_to "新規作成", "/new" %>
+  </div>
+</div>

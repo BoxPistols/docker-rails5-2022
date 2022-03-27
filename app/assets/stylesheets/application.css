@@ -13,10 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
-// @import "bootstrap";
-// Add Local assets
-@import "base";
+body {
+  padding: 4%;
+}
 
 .cont {
   margin: 8px 0 24px;
@@ -100,3 +99,5 @@ main {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+/*# sourceMappingURL=application.css.map */

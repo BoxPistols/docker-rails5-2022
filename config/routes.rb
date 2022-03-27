@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'books#index'
 
   # TOP画面
-  get 'top' => 'books#top'
+  get 'top' => 'books#index'
   get 'books' => 'books#top'
 
   # POST画面
